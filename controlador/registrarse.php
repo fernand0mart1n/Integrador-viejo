@@ -60,6 +60,7 @@ session_start();
 
 			if($res != 'fail')
 			{
+				echo "lalala";
 				header ('Location: ../vista/personal/AreaPersonal.php');
 				die();
 			}
