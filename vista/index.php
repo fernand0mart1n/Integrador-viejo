@@ -33,11 +33,11 @@
 		  				
 		  				
 		  				<div class="col-sm-12" align="center">
-		  					<input id="campoUsuario" type="text" name="user" placeholder="Usuario"/>
+		  					<input id="campoUsuario" type="text" name="user" placeholder="Usuario" required/>
 		  				</div>
 
 		  				<div class="col-sm-12" align="center">
-		  					<input id="campoPass" type="password" name="pass" placeholder="Contraseña"/>
+		  					<input id="campoPass" type="password" name="pass" placeholder="Contraseña" required/>
 		  				</div>
 
 		  				<input id="action" type="hidden" name="action" value="login"/>
