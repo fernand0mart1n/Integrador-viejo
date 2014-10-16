@@ -8,8 +8,8 @@ class Usuario{
 	function loguearse($u , $p){
 	//funcion destinada al logueo de usuario en la pagina web
 
-		$user = strtolower($u);
-		$pass = strtolower($p);
+		$user = ucwords(strtolower($u));
+		$pass = ucwords(strtolower($p));
 
 		$conn = new conexion();
 
@@ -26,6 +26,7 @@ class Usuario{
 				$fila = $stmt->fetch(PDO::FETCH_ASSOC);
 				$_SESSION['nombre'] = $fila['nombre'];
 				$_SESSION['apellido'] = $fila['apellido'];
+				$_SESSION['id'] = $fila['id'];
 
 				return 'ok';
 			}	
@@ -38,10 +39,10 @@ class Usuario{
 	}
 
 	function registrarse($n,$a,$u,$p){
-		$nombre = strtolower($n);
-		$apellido = strtolower($a);
-		$user = strtolower($u);
-		$pass = strtolower($p);
+		$nombre = ucwords(strtolower($n));
+		$apellido = ucwords(strtolower($a));
+		$user = ucwords(strtolower($u));
+		$pass = ucwords(strtolower($p));
 
 		$conn = new conexion();
 
