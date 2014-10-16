@@ -23,14 +23,37 @@
 		<div class="col-sm-4">
 			<fieldset>
 
-				<div class="form-group">
+				<form role="form" action="../controlador/registrarse.php" method="post">
 
-					<label for="inputUser" class="col-lg-2 control-label">  Usuario</label>
-      				<div class="col-lg-8">
-        				<input type="text" class="form-control" id="inputUser" placeholder="Usuario">
-      				</div>
-      				
-				</div>
+					<div class="form-group">
+					    <label for="usuario">Usuario</label>
+					    <input type="text" name="user" class="form-control" id="usuario"
+					        placeholder="Introduce tu Usuario">
+					</div>
+
+				  	<div class="form-group">
+				    	<label for="contraseña1">Contraseña</label>
+				    	<input type="password" name="pass" class="form-control" id="contraseña1" 
+				        	placeholder="Introduce tu Contraseña">
+				  	</div>
+
+				  	<div class="form-group">
+					    <label for="nombre">Nombre</label>
+					    <input type="text" name="nombre" class="form-control" id="nombre"
+					        placeholder="Introduce tu Nombre">
+					</div>
+
+					<div class="form-group">
+					    <label for="apellido">Apellido</label>
+					    <input type="text" name="apellido" class="form-control" id="apellido"
+					        placeholder="Introduce tu Apellido">
+					</div>
+				  	
+					<input id="action" type="hidden" name="action" value="registrarse"/>
+
+				  	<button type="submit" class="btn btn-default">Enviar</button>
+
+				</form>
 
 			</fieldset>
 		</div>
