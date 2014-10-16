@@ -61,11 +61,10 @@ class Usuario{
 
 			if($stmt->rowCount() == 1)
 			{
-				$fila = $stmt->fetch(PDO::FETCH_ASSOC);
-				$_SESSION['nombre'] = $fila['nombre'];
-				$_SESSION['apellido'] = $fila['apellido'];
-
-				return 'ok';
+				$cuenta = 				
+				$cuenta['user'] = $user;
+				$cuenta['pass'] = $pass;
+				return $cuenta;
 			}
 		
 		} catch(PDOException $e){
