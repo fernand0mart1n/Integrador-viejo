@@ -28,25 +28,25 @@
 					<div class="form-group">
 					    <label for="usuario">Usuario</label>
 					    <input type="text" name="user" class="form-control" id="usuario"
-					        placeholder="Introduce tu Usuario">
+					        placeholder="Introduce tu Usuario" required>
 					</div>
 
 				  	<div class="form-group">
 				    	<label for="contraseña1">Contraseña</label>
 				    	<input type="password" name="pass" class="form-control" id="contraseña1" 
-				        	placeholder="Introduce tu Contraseña">
+				        	placeholder="Introduce tu Contraseña" required>
 				  	</div>
 
 				  	<div class="form-group">
 					    <label for="nombre">Nombre</label>
 					    <input type="text" name="nombre" class="form-control" id="nombre"
-					        placeholder="Introduce tu Nombre">
+					        placeholder="Introduce tu Nombre" required>
 					</div>
 
 					<div class="form-group">
 					    <label for="apellido">Apellido</label>
 					    <input type="text" name="apellido" class="form-control" id="apellido"
-					        placeholder="Introduce tu Apellido">
+					        placeholder="Introduce tu Apellido" required>
 					</div>
 				  	
 					<input id="action" type="hidden" name="action" value="registrarse"/>
