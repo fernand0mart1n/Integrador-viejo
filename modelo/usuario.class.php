@@ -71,7 +71,7 @@ class Usuario{
 		return 'fail';
 	}
 
-	function modificar($i){
+	function buscar($i){
 		$id = $i;
 
 		$conn = new conexion();
@@ -100,7 +100,7 @@ class Usuario{
 		return 'fail';
 	}
 
-	function insertamodificacion($usuario, $id){
+	function modificar($usuario, $id){
 		$usuario['nombre'] = ucwords(strtolower($usuario['nombre']));
 		$usuario['apellido'] = ucwords(strtolower($usuario['apellido']));
 		$usuario['user'] = ucwords(strtolower($usuario['user']));
