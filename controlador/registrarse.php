@@ -34,5 +34,45 @@ session_start();
 	}
 
 	function register($nombre,$apellido,$user,$pass){
+		include "../modelo/usuario.class.php";
 
+		$a = new Usuario();
+
+		try{
+
+			$res = $a->registrarse($nombre,$apellido,$user,$pass);
+
+		}catch(Exception $e){
+			header("Location: ../vista/error/ErrorRegister.php?msg".$e->getMessage());
+			die();
+		}
+
+		if($res == 'ok')
+		{
+			try{
+
+				$res = $a->loguearse($user,$pass);
+
+			}catch(Exception $e){
+			header("Location: ../vista/error/ErrorLogin.php?msg".$e->getMessage());
+			die();
+			}
+
+			if($res == 'ok')
+			{
+				echo "Registro exitoso";
+				header ('Location: ../vista/personal/AreaPersonal.php');
+				die();
+			}
+			elseif ($res == 'fail') 
+			{
+				header ('Location: ../index.php?error=1');
+				die();
+			}
+		}
+		elseif ($res == 'fail') 
+		{
+			header ('Location: ../index.php?error=1');
+			die();
+		}
 	}
