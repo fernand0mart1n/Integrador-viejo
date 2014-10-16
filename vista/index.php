@@ -1,6 +1,12 @@
 <?php
 	session_start();
 	ini_set("display_errors", true);
+
+	if (isset($_SESSION['nombre'])) 
+	{
+		header("Location: ../vista/personal/AreaPersonal.php");
+	}
+
 ?>
 
 <!DOCTYPE html>
