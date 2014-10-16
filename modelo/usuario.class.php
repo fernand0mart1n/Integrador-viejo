@@ -28,10 +28,7 @@ class Usuario{
 				$_SESSION['apellido'] = $fila['apellido'];
 
 				return 'ok';
-			}
-			
-				
-			
+			}	
 
 		} catch(PDOException $e){
 			throw new Exception($e->getMessage());
