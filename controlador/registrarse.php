@@ -60,7 +60,6 @@ session_start();
 
 			if($res != 'fail')
 			{
-				echo "Registro exitoso";
 				header ('Location: ../vista/personal/AreaPersonal.php');
 				die();
 			}
