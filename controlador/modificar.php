@@ -7,21 +7,20 @@ session_start();
 		header("Location: ../vista/personal/AreaPersonal.php");
 	}
 
+	if($_SERVER['REQUEST_METHOD'] == 'GET' && !isset($_GET['action']))
+	{
+		header("Location: ../index.php");
+	}	
 	if($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['action']))
 	{
 		header("Location: ../index.php");
 	}
 
-	function modify(){
-		include "../modelo/usuario.class.php";
-
-		$usuario = buscar($_SESSION['id']);
-
-		if($_SERVER['REQUEST_METHOD'] == 'POST')
+	if($_SERVER['REQUEST_METHOD'] == 'POST')
 	{
 		$action = $_POST['action'];
 
-		if($action == 'modify')
+		if($action == 'modificar')
 		{
 			$nombre = $_POST['nombre'];
 			$apellido = $_POST['apellido'];
@@ -37,7 +36,33 @@ session_start();
 			header ('Location: ../index.php?error=1');
 			die();
 		}
+	}	
+
+	function modify(){
+		include "../modelo/usuario.class.php";
+
+		$a = new Usuario();
+
+		try {
+
+			$res = $a->obtener($_SESSION['id']);
+
+		} catch (Exception $e) {
+			header("Location: ../vista/error/ErrorModify.php?msg".$e->getMessage());
+			die();
+		}
+
+		if($res == 'ok')
+		{
+			header ('Location: ../vista/personal/Modificacion_ok.php');
+			die();
+		}
+		elseif ($res == 'fail') 
+		{
+			header ('Location: ../index.php?error=1');
+			die();
+		}
 	}
-}
+
 
 	

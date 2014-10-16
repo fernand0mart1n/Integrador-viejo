@@ -71,7 +71,7 @@ class Usuario{
 		return 'fail';
 	}
 
-	function buscar($i){
+	function obtener($i){
 		$id = $i;
 
 		$conn = new conexion();
