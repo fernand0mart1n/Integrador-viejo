@@ -48,7 +48,7 @@ class Usuario{
 		try{
 
 			$sql = "INSERT INTO usuarios (nombre, apellido, usuario, contrasenia)
-					values ('nombre', 'apellido', 'usuario', 'contrasenia');"
+					values ('nombre', 'apellido', 'usuario', 'contrasenia')";
 			$stmt = $conn->prepare($sql);
 			$stmt->bindParam(':nombre', $nombre, PDO::PARAM_STR);
 			$stmt->bindParam(':apellido', $apellido, PDO::PARAM_STR);
