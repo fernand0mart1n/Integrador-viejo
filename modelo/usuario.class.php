@@ -121,9 +121,7 @@ class Usuario{
 
 			if($stmt->rowCount() == 1)
 			{		
-				$cuenta['user'] = $user;
-				$cuenta['pass'] = $pass;
-				return $cuenta;
+				return 'ok';
 			}
 		
 		} catch(PDOException $e){
