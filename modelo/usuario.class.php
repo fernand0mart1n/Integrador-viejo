@@ -57,8 +57,7 @@ class Usuario{
 			$stmt->execute();
 
 			if($stmt->rowCount() == 1)
-			{
-				$cuenta = 				
+			{		
 				$cuenta['user'] = $user;
 				$cuenta['pass'] = $pass;
 				return $cuenta;
