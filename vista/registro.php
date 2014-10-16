@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Registrarse</title>
 	<meta charset="utf-8">
 	<link href="../librerias/css/bootstrap.min.css" rel="stylesheet" media="screen">
 </head>

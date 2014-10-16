@@ -8,8 +8,8 @@ class Usuario{
 	function loguearse($u , $p){
 	//funcion destinada al logueo de usuario en la pagina web
 
-		$user = ucwords(strtolower($u));
-		$pass = ucwords(strtolower($p));
+		$user = $u;
+		$pass = $p;
 
 		$conn = new conexion();
 
@@ -41,8 +41,8 @@ class Usuario{
 	function registrarse($n,$a,$u,$p){
 		$nombre = ucwords(strtolower($n));
 		$apellido = ucwords(strtolower($a));
-		$user = ucwords(strtolower($u));
-		$pass = ucwords(strtolower($p));
+		$user = $u;
+		$pass = $p;
 
 		$conn = new conexion();
 
@@ -101,10 +101,10 @@ class Usuario{
 	}
 
 	function modificar($usuario, $id){
+		
 		$usuario['nombre'] = ucwords(strtolower($usuario['nombre']));
 		$usuario['apellido'] = ucwords(strtolower($usuario['apellido']));
-		$usuario['user'] = ucwords(strtolower($usuario['user']));
-		$usuario['pass'] = ucwords(strtolower($usuario['pass']));
+		
 
 		$conn = new conexion();
 
