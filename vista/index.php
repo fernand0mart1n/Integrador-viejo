@@ -54,7 +54,7 @@
 		  		</div>
 
 		  		<div class="col-sm-12" align="center">
-		  		<a href="controlador.php"><h6>No tienes cuenta? Registrate..</h6></a>
+		  		<a href="registro.php"><h6>No tienes cuenta? Registrate..</h6></a>
 		  		</div>
 
 		  	</fieldset>
