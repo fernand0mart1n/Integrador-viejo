@@ -20,7 +20,7 @@
     <div class="container">
 
       <!-- Main component for a primary marketing message or call to action -->
-      <div class="col-sm-4">
+      <div class="col-sm-8">
 			 <h2>¿Está seguro que desea eliminar su cuenta?</h2>
 		  </div>
     </div>
