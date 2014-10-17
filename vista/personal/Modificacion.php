@@ -32,7 +32,7 @@
 		<div class="col-sm-4">
 			<fieldset>
 
-				<form role="form" action="../../controlador/modificar.php" method="post">
+				<form role="form" action="../../controlador/modificar.php" method="get">
 
 					<div class="form-group">
 					    <label for="usuario">Usuario</label>
