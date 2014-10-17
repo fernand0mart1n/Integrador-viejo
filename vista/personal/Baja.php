@@ -34,7 +34,7 @@
     <div class="container">
      <div class="col-sm-4">
      <br>
-        <button type="cancel" onclick="javascript:window.location='../AreaPersonal.php';" class="btn btn-danger">Cancelar</button>
+        <button type="cancel" onclick="javascript:window.location='AreaPersonal.php';" class="btn btn-danger">Cancelar</button>
         <button type="submit" onclick="javascript:window.location='../index.php';" class="btn btn-success">Darme de baja</button>
       </div>
     </div>

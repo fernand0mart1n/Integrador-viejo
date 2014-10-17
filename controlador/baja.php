@@ -32,7 +32,8 @@ session_start();
 	}	
 
 	if($res == 'ok'){
-		header ('Location: Modificacion_ok.php');
+		session_destroy();
+		header ('Location: ../index.php');
 	}
 	else
 	{
