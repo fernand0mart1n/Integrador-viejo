@@ -11,7 +11,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Bienvenido <?php echo $_SESSION['nombre'];?></title>
+	<title>Exito</title>
   <meta charset="utf-8">
 	<link href="../../librerias/css/bootstrap.min.css" rel="stylesheet" media="screen">
 </head>
