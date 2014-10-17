@@ -75,7 +75,7 @@ class Usuario{
 		return 'fail';
 	}
 
-	function obtener($i){
+	public function obtener($i){
 		$id = $i;
 
 		$conn = new conexion();
