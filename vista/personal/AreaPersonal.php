@@ -2,6 +2,7 @@
 	session_start();
 	header("Content-Type: text/html; charset=UTF-8");
 
+
 	if (!isset($_SESSION['nombre'])) 
 	{
 		header("Location: ../index.php");
@@ -48,13 +49,11 @@
     <div class="container">
 
       <!-- Main component for a primary marketing message or call to action -->
-      <div class="col-sm-10">
+      <div class="page-header">
 			 <h2>Bienvenido de nuevo <?php echo($_SESSION['nombre']); ?> te estabamos esperando..</h2>
 		  </div>
 
     </div>
-    
-    <hr>
 
 	<div class="container">
   <!--Cuerpo de la pagina. donde se encuentran los resultados de la busqueda-->
@@ -67,7 +66,7 @@
       </div>
 
       <div class="panel-body">
-        <form role="form" action="../../controlador/registrarse.php" method="post">
+        <form role="form" action="../../controlador/buscar.php" method="post">
 
           <div class="col-sm-3">
             <div class="form-group">
@@ -92,6 +91,29 @@
 
       <div class="panel-body">
         
+      <?php
+      if(isset($_GET))
+      {
+      
+        foreach ($busqueda as $llave => $valor):
+      ?>
+
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <?php 
+
+              echo ($llave.": ".$valor);
+
+              ?>
+            </div>
+          </div>
+
+
+      <?php
+        endforeach;
+      }
+      ?>
+
       </div>
     </div>
 

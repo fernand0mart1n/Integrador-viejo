@@ -111,7 +111,7 @@ class Usuario{
 
 		$conn = new conexion();
 
-		if(isset($n) && isset($a))
+		if(!empty($n) && !empty($a))
 		{
 			try{
 
@@ -136,7 +136,7 @@ class Usuario{
 				throw new Exception($e->getMessage());
 			}
 		}
-		elseif (isset($n) && !isset($a)) 
+		elseif (!empty($n) && empty($a)) 
 		{
 			try{
 
@@ -160,7 +160,7 @@ class Usuario{
 				throw new Exception($e->getMessage());
 			}
 		}
-		elseif (!isset($n) && isset($a)) 
+		elseif (empty($n) && !empty($a)) 
 		{
 			try{
 

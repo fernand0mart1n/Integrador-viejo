@@ -2,6 +2,7 @@
 
 session_start();
 
+
 	if($_SERVER['REQUEST_METHOD'] == 'GET' && !isset($_GET['action']))
 	{
 		header("Location: ../index.php");
@@ -10,7 +11,7 @@ session_start();
 	if($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['action']))
 	{
 		header("Location: ../index.php");
-
+	}
 	//verifica acciones por metodo post
 	if($_SERVER['REQUEST_METHOD'] == 'POST')
 	{
@@ -43,6 +44,15 @@ function buscar($n, $a){
 	try
 	{
 		$busqueda = $a->buscar($n,$a);
+
+		foreach ($busqueda as $llave => $valor)
+		{
+			$url = $url.$llave."=".$valor."&"; 
+		}
+
+		header("Location: ../vista/personal/AreaPersonal.php?".$url);
+
+		die();
 	}
 	catch(Exception $e)
 	{
