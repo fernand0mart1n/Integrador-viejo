@@ -1,6 +1,6 @@
 <?php
 
-ession_start();
+session_start();
 
 	if (isset($_SESSION['nombre'])) 
 	{
@@ -22,14 +22,7 @@ ession_start();
 
 		if($action == 'baja')
 		{
-			$nombre = $_POST['nombre'];
-			$apellido = $_POST['apellido'];
-			$user = $_POST['user'];
-			$pass = $_POST['pass'];
-
-			$res = modificar($usuario,$_SESSION['id']);
-
-			return $res;
+			$res = delete();
 		}
 		else
 		{
@@ -37,6 +30,15 @@ ession_start();
 			die();
 		}
 	}	
+
+	if($res == 'ok'){
+		header ('Location: Modificacion_ok.php');
+	}
+	else
+	{
+		header ('Location: ../index.php?error=1');
+		die();
+	}
 
 	function delete(){
 		include "../modelo/usuario.class.php";
@@ -54,6 +56,7 @@ ession_start();
 
 		if($res == 'ok')
 		{
+			return $res;
 			header ('Location: ../vista/personal/Baja_ok.php');
 			die();
 		}

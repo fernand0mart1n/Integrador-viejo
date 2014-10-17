@@ -46,12 +46,12 @@
 
 				  	 <div class="form-group">
 				    	<label for="contraseña2">Confirmar nueva contraseña</label>
-				    	<input type="password" name="pass" class="form-control" id="contraseña1" type="password" required>
+				    	<input type="password" name="pass" class="form-control" id="contraseña2" type="password" required>
 				  	</div>
 
 				  	 <div class="form-group">
 				    	<label for="contraseña">Contraseña antigua</label>
-				    	<input type="password" name="pass" class="form-control" id="contraseña1" type="password" required>
+				    	<input type="password" name="pass" class="form-control" id="contraseña" type="password" required>
 				  	</div>
 
 				  	<div class="form-group">
