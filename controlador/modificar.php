@@ -16,9 +16,9 @@ session_start();
 		header("Location: ../index.php");
 	}
 
-	if($_SERVER['REQUEST_METHOD'] == 'POST')
+	if($_SERVER['REQUEST_METHOD'] == 'GET')
 	{
-		$action = $_POST['action'];
+		$action = $_GET['action'];
 
 		if($action == 'modificar')
 		{
