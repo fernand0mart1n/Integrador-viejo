@@ -24,16 +24,19 @@ session_start();
 		{
 			$usuario = modify();
 			$res = modificar($usuario,$_SESSION['id']);
-			if($res == 'ok'){
-				header ('Location: Modificacion_ok.php');
-			}
-			else
-			{
-				header ('Location: ../index.php?error=1');
-				die();
-			}
+
 		}
 	}	
+
+	if($res == 'ok'){
+		header ('Location: Modificacion_ok.php');
+	}
+	else
+	{
+		header ('Location: ../index.php?error=1');
+		die();
+	}
+
 
 	function modify(){
 		include "../modelo/usuario.class.php";
