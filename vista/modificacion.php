@@ -5,6 +5,12 @@
 
 	header("Content-Type: text/html; charset=UTF-8");
 
+	include "../modelo/usuario.class.php";
+
+	$a = new usuario();
+
+	$a->obtener($_SESSION['id']);
+
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +36,7 @@
 
 					<div class="form-group">
 					    <label for="usuario">Usuario</label>
-					    <input type="text" name="user" class="form-control" id="usuario" value=""
+					    <input type="text" name="user" class="form-control" id="usuario" value="<?php echo $a['user'];?>"
 					        placeholder="Introduce tu Usuario" required>
 					</div>
 
