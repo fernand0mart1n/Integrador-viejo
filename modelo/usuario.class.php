@@ -75,7 +75,7 @@ class Usuario{
 		return 'fail';
 	}
 
-	public function obtener($i){
+	function obtener($i){
 		$id = $i;
 
 		$conn = new conexion();
@@ -103,6 +103,96 @@ class Usuario{
 
 		return 'fail';
 	}
+
+	function buscar($n, $a){
+
+		$n = ucwords(strtolower($n));
+		$a = ucwords(strtolower($a));
+
+		$conn = new conexion();
+
+		if(isset($n) && isset($a))
+		{
+			try{
+
+				$sql = "SELECT * FROM usuarios WHERE nombre = :nombre AND apellido = :apellido";
+				$stmt = $conn->prepare($sql);
+				$stmt->bindParam(':nombre',$n ,PDO::PARAM_STR);
+				$stmt->bindParam(':apellido',$a ,PDO::PARAM_STR);
+				$stmt->execute();
+
+				if($stmt->rowCount() > 0)
+				{
+					$busqueda = $stmt->fetch(PDO::FETCH_ASSOC);
+
+					return $busqueda;
+				}
+				else
+				{
+					return 'La busqueda no devolvio resultados..';
+				}
+
+			} catch(PDOException $e){
+				throw new Exception($e->getMessage());
+			}
+		}
+		elseif (isset($n) && !isset($a)) 
+		{
+			try{
+
+				$sql = "SELECT * FROM usuarios WHERE nombre = :nombre";
+				$stmt = $conn->prepare($sql);
+				$stmt->bindParam(':nombre',$n ,PDO::PARAM_STR);
+				$stmt->execute();
+
+				if($stmt->rowCount() > 0)
+				{
+					$busqueda = $stmt->fetch(PDO::FETCH_ASSOC);
+
+					return $busqueda;
+				}
+				else
+				{
+					return 'La busqueda no devolvio resultados..';
+				}
+
+			} catch(PDOException $e){
+				throw new Exception($e->getMessage());
+			}
+		}
+		elseif (!isset($n) && isset($a)) 
+		{
+			try{
+
+				$sql = "SELECT * FROM usuarios WHERE apellido = :apellido";
+				$stmt = $conn->prepare($sql);
+				$stmt->bindParam(':apellido',$a ,PDO::PARAM_STR);
+				$stmt->execute();
+
+				if($stmt->rowCount() > 0)
+				{
+					$busqueda = $stmt->fetch(PDO::FETCH_ASSOC);
+
+					return $busqueda;
+				}
+				else
+				{
+					return 'La busqueda no devolvio resultados..';
+				}
+
+			} catch(PDOException $e){
+				throw new Exception($e->getMessage());
+			}
+		}
+		else
+		{
+			return 'La busqueda no devolvio resultados..';
+		}
+
+		return 'La busqueda no devolvio resultados..';
+
+	}
+
 
 	function modificar($usuario, $id){
 		
@@ -160,4 +250,5 @@ class Usuario{
 
 		return 'fail';
 	}
+
 }

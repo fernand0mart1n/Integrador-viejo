@@ -48,20 +48,58 @@
     <div class="container">
 
       <!-- Main component for a primary marketing message or call to action -->
-    	<div class="col-sm-10">
-			<h2>Bienvenido de nuevo <?php echo($_SESSION['nombre']); ?> te estabamos esperando..</h2>
-		</div>
+      <div class="col-sm-10">
+			 <h2>Bienvenido de nuevo <?php echo($_SESSION['nombre']); ?> te estabamos esperando..</h2>
+		  </div>
 
     </div>
-
+    
+    <hr>
 
 	<div class="container">
-		
+  <!--Cuerpo de la pagina. donde se encuentran los resultados de la busqueda-->
 
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+
+        <h3 class="panel-title">Busqueda de Usuarios</h3>
+
+      </div>
+
+      <div class="panel-body">
+        <form role="form" action="../../controlador/registrarse.php" method="post">
+
+          <div class="col-sm-3">
+            <div class="form-group">
+                <input type="text" name="nombre" class="form-control" id="nombre"
+                    placeholder="Nombre">
+            </div>
+          </div>
+
+          <div class="col-sm-3">
+            <div class="form-group">
+                <input type="text" name="apellido" class="form-control" id="apellido"
+                    placeholder="Apellido">
+            </div>
+          </div>
+
+          <input id="action" type="hidden" name="action" value="buscar"/>
+
+          <button type="submit" class="btn btn-default">Buscar</button>
+
+        </form>
+      </div>
+
+      <div class="panel-body">
+        
+      </div>
+    </div>
+
+  </div> <!--Fin del cuerpo de la pagina-->
 		
 	
 	</div>
-	<hr>
+	
 
 </body>
 </html>
