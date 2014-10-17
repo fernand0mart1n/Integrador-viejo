@@ -22,11 +22,7 @@ session_start();
 
 		if($action == 'modificar')
 		{
-			$nombre = $_POST['nombre'];
-			$apellido = $_POST['apellido'];
-			$user = $_POST['user'];
-			$pass = $_POST['pass'];
-
+			modify();
 			$res = modificar($usuario,$_SESSION['id']);
 
 			return $res;
