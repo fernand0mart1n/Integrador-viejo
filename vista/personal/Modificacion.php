@@ -66,11 +66,9 @@
 				  	
 					<input id="action" type="hidden" name="action" value="modificar"/>
 
-				  	<button type="submit" class="btn btn-danger">Cancelar</button>
+				  	<button type="cancel" onclick="javascript:window.location='../index.php';" class="btn btn-danger">Cancelar</button>
 				  	<button type="submit" class="btn btn-success">Guardar</button>
-
 				</form>
-
 			</fieldset>
 		</div>
 

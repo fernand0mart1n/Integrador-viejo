@@ -27,7 +27,7 @@
     </div>
     <div class="container">
      <div class="col-sm-10">
-                <button type="submit" onaction=redirect ../AreaPersonal.php class="btn btn-success">Volver a área personal</button>
+        <button type="submit" onclick="javascript:window.location='../personal/AreaPersonal.php';" class="btn btn-success">Volver a área personal</button>
       </div>
     </div>
     <hr>
