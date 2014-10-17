@@ -130,4 +130,30 @@ class Usuario{
 
 		return 'fail';
 	}
+
+	function baja($id){
+		$id = $i;
+
+		$conn = new conexion();
+
+		try{
+
+			$sql = "DELETE * FROM usuarios WHERE id = :id";
+			$stmt = $conn->prepare($sql);
+			$stmt->bindParam(':id', $id, PDO::PARAM_STR);
+			$stmt->execute();
+
+			if($stmt->rowCount() == 1)
+			{
+				$fila = $stmt->fetch(PDO::FETCH_ASSOC);
+				
+				return 'ok';
+			}	
+
+		} catch(PDOException $e){
+			throw new Exception($e->getMessage());
+		}
+
+		return 'fail';
+	}
 }
