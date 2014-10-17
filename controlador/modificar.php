@@ -22,7 +22,7 @@ session_start();
 
 		if($action == 'modificar')
 		{
-			modify();
+			$usuario = modify();
 			$res = modificar($usuario,$_SESSION['id']);
 			if($res == 'ok'){
 				header ('Location: Modificacion_ok.php');
@@ -51,6 +51,7 @@ session_start();
 
 		if($res == 'ok')
 		{
+			return $a;
 			header ('Location: ../vista/personal/Modificacion.php');
 			die();
 		}
