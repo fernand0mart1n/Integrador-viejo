@@ -54,7 +54,7 @@ session_start();
 
 		if($res == 'ok')
 		{
-			header ('Location: ../vista/personal/Modificacion_ok.php');
+			header ('Location: ../vista/personal/Modificacion.php');
 			die();
 		}
 		elseif ($res == 'fail') 
