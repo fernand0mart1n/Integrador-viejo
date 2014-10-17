@@ -232,7 +232,7 @@ class Usuario{
 
 		try{
 
-			$sql = "DELETE * FROM usuarios WHERE id = :id";
+			$sql = "DELETE FROM usuarios WHERE id = :id";
 			$stmt = $conn->prepare($sql);
 			$stmt->bindParam(':id', $id, PDO::PARAM_STR);
 			$stmt->execute();
